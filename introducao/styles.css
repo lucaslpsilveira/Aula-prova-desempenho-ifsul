@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ddd;
+}
+
+.container {
+    margin: 20px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.box {
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.breve {
+    background-color: #4CAF50;
+    text-align: center;
+    width: 40%;
+}
+
+.breve h1 {
+    font-size: 50px;
+}
+
+.introducao {
+    background-color: #FF9800;
+    text-align: left;
+    margin-left: auto;
+    width: 60%;
+}
+
+.introducao h1{
+    font-size: 70px;
+}
+
+.tecnologias {
+    display: flex;
+    margin-top: 20px;
+}
+
+.css {
+    background-color: #2196F3;
+    width: 60%;
+    margin-right: 5px;
+}
+
+.html {
+    background-color: #FFEB3B;
+    width: 40%;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 20px;
+    font-weight: bold;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulação da DOM - Aula Prática</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .box {
+            width: 300px;
+            height: 150px;
+            background-color: lightgray;
+            border: 2px solid #333;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .box.ativo {
+            border-color: red;
+            background-color: lightcoral;
+        }
+
+        .container {
+            border: 2px dashed #666;
+            padding: 10px;
+            min-height: 50px;
+            background-color: #fff;
+        }
+
+        button {
+            margin: 5px;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="titulo">Título Original</h1>
+
+    <div class="box">Sou uma caixa</div>
+
+    <div>
+        <button id="btnMudarCor">Mudar Cor</button>
+        <button id="btnAdicionarTexto">Adicionar Texto</button>
+        <button id="btnRemoverTexto">Remover Texto</button>
+    </div>
+
+    <h2>Container de Itens</h2>
+    <div class="container"></div>
+
+    <script>
+        // Seleciona elementos
+        const titulo = document.getElementById('titulo');
+        const box = document.querySelector('.box');
+        const btnMudarCor = document.getElementById('btnMudarCor');
+        const btnAdicionarTexto = document.getElementById('btnAdicionarTexto');
+        const btnRemoverTexto = document.getElementById('btnRemoverTexto');
+        const container = document.querySelector('.container');
+
+        // Evento: Mudar Cor da Caixa
+        btnMudarCor.addEventListener('click', () => {
+            box.classList.toggle('ativo');
+            titulo.innerText = 'Cor da caixa alterada!';
+        });
+
+        // Evento: Adicionar Texto
+        btnAdicionarTexto.addEventListener('click', () => {
+            const novoParagrafo = document.createElement('p');
+            novoParagrafo.innerText = 'Parágrafo criado via JavaScript';
+            container.appendChild(novoParagrafo);
+        });
+
+        // Evento: Remover Texto
+        btnRemoverTexto.addEventListener('click', () => {
+            const paragrafos = container.querySelectorAll('p');
+            if (paragrafos.length > 0) {
+                const ultimoParagrafo = paragrafos[paragrafos.length - 1];
+                container.removeChild(ultimoParagrafo);
+            } else {
+                alert('Não há mais parágrafos para remover!');
+            }
+        });
+    </script>
+</body>
+</html>

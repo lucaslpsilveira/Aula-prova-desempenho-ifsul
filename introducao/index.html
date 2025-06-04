@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breve Introdução CSS HTML</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .box-botao {
+            display: flex;
+            justify-content: center;
+        }
+        #btn {
+            background-color: aquamarine;
+            border: none;
+            border-radius: 30px;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            color: #000;       
+        }
+    </style>    
+</head>
+<body>
+    <div class="container">
+        <div class="box breve">
+            <h1>Breve</h1>
+        </div>
+        <div class="box introducao">
+            <h1>Introdução</h1>
+        </div>
+        <div class="tecnologias">
+            <div class="box css">
+                <p>CSS</p>
+            </div>
+            <div class="box html">
+                <p>HTML</p>
+            </div>
+        </div>
+        <div class="box-botao">
+            <button id="btn">Clique aqui</button>
+        </div>
+    </div>
+</body>
+ <script>
+    const botao = document.getElementById('btn');
+    
+    botao.addEventListener('click', () => {
+        alert("Botão clicado")
+    });
+</script>
+</html>
